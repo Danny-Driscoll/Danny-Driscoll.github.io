@@ -161,8 +161,8 @@ window.optimizelyTemplateTool = {
                     }
 
                     console.log(JSON.stringify(final_config));
-                    // Create experiment
-                    optly.post('experiments?action=start', final_config, function(experiment) {
+                    // Create experiment temporarily remove action=start
+                    optly.post('experiments', final_config, function(experiment) {
                         resolve(experiment);
                     });
                 });
