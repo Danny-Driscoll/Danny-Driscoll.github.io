@@ -13,7 +13,7 @@ window.optimizelyTemplateTool = {
 
             var optly = new OptimizelyAPI({
                 password: app_config.password,
-                client_id: 7696655230
+                client_id: 6705913417
             });
         }
 
