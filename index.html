@@ -38,7 +38,7 @@
                   analytics._loadOptions = e
               };
               analytics.SNIPPET_VERSION = "4.1.0";
-             analytics.load("BtIsPSfTEh0dVONHcqfdyvAXWFHRLpfw");
+             analytics.load("cRu0bGEoeheXjEQpAHopQHiKZuH47sr1");
   analytics.page();
   }}();
 </script>
@@ -49,6 +49,7 @@
     window.logEvent = logEvent
     }
    window.onDecision = function(decision){
+    analytics.track('')
  console.log(decision)
  window.decisionEvent = decision;
 }
