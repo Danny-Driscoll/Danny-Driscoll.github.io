@@ -58,9 +58,9 @@ window.onActivate = function(activate){
  console.log(activate)
  window.activateEvent = activate;
 }   
-window.onTrack = function(trackEvent){
-  console.log(trackEvent);
-  window.trackEvent = tackEvent;
+window.onTrack = function(event){
+  console.log(event);
+  window.event = event;
 }
 optimizelyClientInstance.notificationCenter.addNotificationListener(optimizelySdk.enums.NOTIFICATION_TYPES.ACTIVATE,onActivate);
    optimizelyClientInstance.notificationCenter.addNotificationListener(optimizelySdk.enums.NOTIFICATION_TYPES.LOG_EVENT,onLog);
