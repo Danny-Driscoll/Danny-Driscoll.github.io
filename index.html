@@ -44,6 +44,7 @@
   analytics.identify("thisisauser");
 </script>
   <script>
+   window.optimizelySDK.setLogLevel('debug'); 
    window.optimizelyClientInstance = window.optimizelySdk.createInstance({sdkKey:'15gywErrhRhKGHaTJCBw9Z'})
    window.onLog = function(logEvent) {
     console.log(logEvent)
