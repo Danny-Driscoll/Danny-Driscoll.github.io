@@ -59,11 +59,12 @@
     var info = decisionObject.decisionInfo;
     var featureKeyString = "[Optimizely Feature] " + info.featureKey;
     var enabled = info.featureEnabled;
+    var attributes = info.attributes;
     analytics.track('Feature Flag', {
       "key": featureKeyString,
       "enabled": enabled,
       info,
-      decisionObject.attributes
+      attributes
     });
     //If the Feature Flag decision is a result of a feature test, dispatch an additional Experiment Viewed semantic event (https://segment.com/docs/connections/spec/ab-testing/)
     if (info.source == "feature-test") {
