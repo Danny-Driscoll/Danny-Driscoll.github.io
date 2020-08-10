@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://unpkg.com/@optimizely/optimizely-sdk@4.1.0-beta/dist/optimizely.browser.umd.min.js"></script>
 <script src="https://cdn.optimizely.com/datafiles/2ikjPy1TerLpVsfmzH6B5m.json/tag.js"></script>
-
+<script src="https://unpkg.com/launchdarkly-js-client-sdk@2"></script>
 
 <script>
     ! function() {
@@ -94,6 +94,31 @@ optimizelyClientInstance.notificationCenter.addNotificationListener(optimizelySd
    
 </script>
   <script src="https://cdn-pci.optimizely.com/js/1378063170.js"></script>
+    var user = {
+    firstName: 'Bob',
+    lastName: 'Loblaw',
+    key: 'UNIQUE IDENTIFIER',
+    custom: {
+      groups: 'beta_testers'
+    }
+  };
+
+  var div = document.createElement('div');
+  document.body.appendChild(div);
+
+  div.appendChild(document.createTextNode('Initializing...'));
+
+  var ldclient = LDClient.initialize('5f315f92c8369f081c5cde87', user);
+
+  function render() {
+    var shouldShow = ldclient.variation('test-flag', false);
+    var label = (shouldShow ? 'Showing' : 'Not showing') + ' your feature to ' + user.key;
+    div.replaceChild(document.createTextNode(label), div.firstChild);
+  }
+
+  ldclient.on('ready', render);
+  ldclient.on('change', render);
+</script>
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
