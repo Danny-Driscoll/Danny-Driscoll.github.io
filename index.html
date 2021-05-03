@@ -47,7 +47,7 @@
   analytics.identify("thisisauser");
 </script>
   <script>
-   window.optimizelyClientInstance = window.optimizelyClient.createInstance({datafile:optimizelyDatafile})
+   window.optimizelyClientInstance = window.optimizelySdk.createInstance({datafile:optimizelyDatafile})
    window.onLog = function(logEvent) {
     console.log(logEvent)
     window.logEvent = logEvent
