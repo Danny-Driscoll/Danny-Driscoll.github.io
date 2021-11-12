@@ -5,6 +5,18 @@
   <title>Quickstart Guide</title>
   <script src="https://zaius-zd-demo.s3.amazonaws.com/lib/index.js"></script>
   <script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js"></script>
+  <script src="//cdn.split.io/sdk/split-10.16.1.min.js"></script>
+  <script> var factory = splitio({ 
+  core: {
+    authorizationKey: '2as0q7ut1d493798u4t5ipd2bkopmtopvroq',
+    // key represents your internal user id, or the account id that 
+    // the user belongs to. 
+    // This coudld also be a cookie you generate for anonymous users
+    key: 'key'
+  }
+});
+// And get the client instance you'll use
+var client = factory.client(); </script>
 </head>
 
 <body>
