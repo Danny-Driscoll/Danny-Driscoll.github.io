@@ -17,6 +17,14 @@
 });
 // And get the client instance you'll use
 var client = factory.client(); </script>
+<script src="https://cdn.split.io/rum-agent/rum-agent-0.2.1.min.js"></script>
+<script>
+  window.SPLIT_RUM.init('2as0q7ut1d493798u4t5ipd2bkopmtopvroq')
+    .identities([
+      { key: 'key', trafficType: 'A_TRAFFIC_TYPE' },
+      { key: 'ANOTHER_key', trafficType: 'ANOTHER_TRAFFIC_TYPE' }
+    ]);
+</script>
 </head>
 
 <body>
